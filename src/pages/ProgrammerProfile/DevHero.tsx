@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Cpu } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
+import MatrixRain from '../../components/MatrixRain';
 
 export default function DevHero() {
   const [showWhoamiOutput, setShowWhoamiOutput] = useState(false);
@@ -11,9 +12,9 @@ export default function DevHero() {
 
   return (
     <section id="developer" className="relative min-h-screen flex items-center justify-center overflow-hidden py-16">
-      {/* Cyan grid background lines */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.02)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+      {/* Matrix Rain Background */}
+      <MatrixRain />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,65,0.04)_0%,transparent_70%)] pointer-events-none z-[1]" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 w-full flex flex-col items-center">
         {/* Sleek Terminal Window */}
@@ -157,7 +158,7 @@ export default function DevHero() {
           <div className="pt-4 flex flex-wrap justify-center gap-4">
             <a
               href="#projects"
-              className="bg-[var(--accent)] text-[var(--accent-foreground)] px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-all shadow-[0_4px_20px_rgba(6,182,212,0.3)] font-sans"
+              className="bg-[var(--accent)] text-[var(--accent-foreground)] px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-all shadow-[0_4px_20px_rgba(0,255,65,0.3)] font-sans animate-border-pulse"
             >
               Explore Projects
             </a>

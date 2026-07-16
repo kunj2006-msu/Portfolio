@@ -27,11 +27,17 @@ export default function Education() {
   return (
     <section id="education" className="py-24 bg-[var(--muted)]/20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-5xl font-bold font-sans mb-4 uppercase tracking-wider">Education & Academics</h2>
           <p className="text-[var(--accent)] font-semibold font-sans">Academic Qualifications & Merits</p>
           <div className="w-24 h-1 bg-[var(--accent)] mx-auto rounded-full mt-4" />
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {/* Main College Card */}
@@ -39,7 +45,7 @@ export default function Education() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-1 p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between gold-shadow group"
           >
             <div className="space-y-6">
@@ -70,7 +76,7 @@ export default function Education() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                transition={{ duration: 0.5, delay: (i + 1) * 0.2 }}
                 className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between items-start text-left group gold-shadow"
               >
                 <div className="w-10 h-10 rounded-xl bg-[var(--accent)]/5 text-[var(--accent)] flex items-center justify-center border border-[var(--accent)]/10 shadow-sm group-hover:bg-[var(--accent)]/20 transition-all duration-300 mb-6">
