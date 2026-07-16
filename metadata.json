@@ -1,0 +1,8 @@
+{
+  "name": " Jayantormi Sahitya Seva Trust",
+  "description": "A modern, elegant Gujarati literature trust landing page featuring blooming lotus animations, committee profiles, and quarterly magazine highlights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
