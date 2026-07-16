@@ -1,27 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, Percent, BookOpen } from 'lucide-react';
+import { Terminal, User } from 'lucide-react';
+import TiltCard from '../../components/TiltCard';
 
-const stats = [
-  {
-    value: "98.06%",
-    label: "Boards Percentile",
-    description: "HSC Board Examination, showcasing consistent academic excellence.",
-    icon: Percent
-  },
-  {
-    value: "98.86%",
-    label: "GUJCET Percentile",
-    description: "State-level competitive entrance test for engineering admissions.",
-    icon: Award
-  },
-  {
-    value: "100/100",
-    label: "Mathematics Score",
-    description: "Perfect score in high school mathematics evaluation.",
-    icon: BookOpen
-  }
+const techTags = [
+  '[ React.js ]',
+  '[ Python ]',
+  '[ AI/ML ]',
+  '[ Next.js 16 ]',
+  '[ Spring Boot ]',
+  '[ Docker ]',
+  '[ Java ]',
+  '[ MongoDB ]',
 ];
+
+const tagContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.07,
+    },
+  },
+};
+
+const tagVariants = {
+  hidden: { opacity: 0, scale: 0.6, y: 10 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
+};
 
 export default function Education() {
   return (
@@ -34,69 +39,123 @@ export default function Education() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold font-sans mb-4 uppercase tracking-wider">Education & Academics</h2>
-          <p className="text-[var(--accent)] font-semibold font-sans">Academic Qualifications & Merits</p>
+          <h2 className="text-3xl md:text-5xl font-bold font-sans mb-4 uppercase tracking-wider">About Me</h2>
+          <p className="text-[var(--accent)] font-semibold font-sans">Who I Am & What I Build</p>
           <div className="w-24 h-1 bg-[var(--accent)] mx-auto rounded-full mt-4" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-          {/* Main College Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto items-stretch">
+          {/* Left Column — About Me Text Card */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-1 p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between gold-shadow group"
           >
-            <div className="space-y-6">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center border border-[var(--accent)]/20 shadow-md group-hover:scale-110 group-hover:bg-[var(--accent)] group-hover:text-[var(--accent-foreground)] transition-all duration-500">
-                <GraduationCap size={28} />
-              </div>
-              <div className="space-y-2">
-                <span className="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Currently Enrolled</span>
-                <h3 className="text-2xl font-bold text-white">B.E. Computer Science & Engineering</h3>
-                <p className="text-sm text-[var(--accent)] font-medium">Maharaja Sayajirao University of Baroda (MSU Baroda)</p>
-              </div>
-              <p className="text-sm text-[var(--muted-foreground)] leading-relaxed font-light">
-                Pursuing standard rigorous study in algorithms, data structures, software engineering, databases, and computer systems. Currently in 3rd year.
-              </p>
-            </div>
+            <TiltCard className="h-full">
+              <div className="h-full p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col gold-shadow group">
+                {/* Terminal Title Bar */}
+                <div className="flex items-center gap-2 mb-6 pb-4 border-b border-[var(--border)]/30">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ef4444]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#eab308]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#22c55e]" />
+                  </div>
+                  <span className="text-[10px] font-mono text-[var(--muted-foreground)] ml-2 flex items-center gap-1">
+                    <Terminal size={10} />
+                    about.sh
+                  </span>
+                </div>
 
-            <div className="pt-6 border-t border-[var(--border)]/30 mt-6 text-xs text-[var(--muted-foreground)] flex justify-between">
-              <span>Duration: 2024 - 2028</span>
-              <span className="text-[var(--accent)] font-semibold">GPA: 8.86</span>
-            </div>
+                {/* Content */}
+                <div className="space-y-5 flex-1">
+                  <h3 className="text-xl font-bold font-mono text-[#00FF41] flex items-center gap-2">
+                    <User size={18} />
+                    <span>&gt; WHOAMI</span>
+                  </h3>
+
+                  <div className="space-y-4 font-mono text-sm leading-relaxed">
+                    <p className="text-cyan-400">
+                      I am a <span className="text-white font-semibold">3rd-year B.E. Computer Science</span> student at{' '}
+                      <span className="text-[#00FF41] font-semibold">MSU Baroda</span>.
+                    </p>
+                    <p className="text-[var(--muted-foreground)]">
+                      I am passionate about <span className="text-cyan-400">Object-Oriented Programming</span>,
+                      building <span className="text-cyan-400">full-stack AI healthcare systems</span>,
+                      and solving real-world problems.
+                    </p>
+                    <p className="text-[var(--muted-foreground)]">
+                      When I'm not coding, I write <span className="text-[#00FF41]">Ghazals</span> and
+                      contribute to <span className="text-[#00FF41]">open-source communities</span>.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom status bar */}
+                <div className="pt-5 mt-5 border-t border-[var(--border)]/30 flex items-center justify-between text-[10px] font-mono text-[var(--muted-foreground)]">
+                  <span className="flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00FF41] inline-block animate-pulse" />
+                    ACTIVE
+                  </span>
+                  <span>GPA: <span className="text-[#00FF41] font-bold">8.86</span></span>
+                  <span>2024 — 2028</span>
+                </div>
+              </div>
+            </TiltCard>
           </motion.div>
 
-          {/* Academic Highlights Grid */}
-          <div className="lg:col-span-2 grid sm:grid-cols-3 gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (i + 1) * 0.2 }}
-                className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between items-start text-left group gold-shadow"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[var(--accent)]/5 text-[var(--accent)] flex items-center justify-center border border-[var(--accent)]/10 shadow-sm group-hover:bg-[var(--accent)]/20 transition-all duration-300 mb-6">
-                  <stat.icon size={20} />
+          {/* Right Column — Profile Image & Tech Tags Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+          >
+            <TiltCard className="h-full">
+              <div className="h-full p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col items-center justify-center gold-shadow group">
+                {/* Profile Image */}
+                <div className="relative mb-8">
+                  <div className="w-64 h-64 rounded-2xl border-2 border-[#00FF41]/30 overflow-hidden bg-[#0a0d14] flex items-center justify-center group-hover:border-[#00FF41]/60 transition-all duration-500 shadow-[0_0_20px_rgba(0,255,65,0.08)]">
+                    <img
+                      src="https://res.cloudinary.com/dssflxwaq/image/upload/v1784209320/c4273aeb-6400-4237-a40a-383f88498fcd.png"
+                      alt="Profile"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+                      }}
+                    />
+                    {/* Fallback icon */}
+                    {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <User size={80} className="text-[#00FF41]/20" />
+                    </div> */}
+                  </div>
+                  {/* Glow ring */}
+                  <div className="absolute -inset-1 rounded-2xl bg-[#00FF41]/5 -z-10 group-hover:bg-[#00FF41]/10 transition-all duration-500 blur-sm" />
                 </div>
 
-                <div className="space-y-2">
-                  <div className="text-3xl md:text-4xl font-extrabold text-[var(--accent)] tracking-tight font-sans">
-                    {stat.value}
-                  </div>
-                  <h4 className="text-sm font-bold text-white tracking-wide">
-                    {stat.label}
-                  </h4>
-                  <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">
-                    {stat.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                {/* Tech Tags */}
+                <motion.div
+                  className="flex flex-wrap justify-center gap-2.5 max-w-sm"
+                  variants={tagContainerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  {techTags.map((tag, i) => (
+                    <motion.span
+                      key={i}
+                      variants={tagVariants}
+                      className="text-xs font-mono font-bold tracking-wider text-[#00FF41] border border-[#00FF41]/20 bg-[#00FF41]/5 px-3 py-1.5 rounded-lg cursor-default hover:scale-110 hover:bg-[#00FF41]/10 hover:border-[#00FF41]/40 transition-all duration-200"
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </div>
+            </TiltCard>
+          </motion.div>
         </div>
       </div>
     </section>

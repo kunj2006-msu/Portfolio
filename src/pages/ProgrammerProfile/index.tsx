@@ -9,7 +9,7 @@ import ParticleBackground from '../../components/ParticleBackground';
 
 const navLinks = [
   { name: 'Developer', href: '#developer' },
-  { name: 'Education', href: '#education' },
+  { name: 'About', href: '#education' },
   { name: 'Projects', href: '#projects' },
 ];
 
