@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { GraduationCap, Award, Percent, BookOpen } from 'lucide-react';
 
 const stats = [
@@ -36,11 +36,11 @@ export default function Education() {
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {/* Main College Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-1 p-8 rounded-3xl bg-[var(--card)] border border-[var(--accent)]/15 flex flex-col justify-between hover:border-[var(--accent)]/40 transition-all duration-500 gold-shadow group"
+            transition={{ duration: 0.5, delay: 0 }}
+            className="lg:col-span-1 p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between gold-shadow group"
           >
             <div className="space-y-6">
               <div className="w-14 h-14 rounded-2xl bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center border border-[var(--accent)]/20 shadow-md group-hover:scale-110 group-hover:bg-[var(--accent)] group-hover:text-[var(--accent-foreground)] transition-all duration-500">
@@ -67,11 +67,11 @@ export default function Education() {
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.8 }}
-                className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)]/30 transition-all duration-500 flex flex-col justify-between items-start text-left group hover:translate-y-[-4px] gold-shadow"
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between items-start text-left group gold-shadow"
               >
                 <div className="w-10 h-10 rounded-xl bg-[var(--accent)]/5 text-[var(--accent)] flex items-center justify-center border border-[var(--accent)]/10 shadow-sm group-hover:bg-[var(--accent)]/20 transition-all duration-300 mb-6">
                   <stat.icon size={20} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ExternalLink, Github, Database, Cpu, Sparkles, Network } from 'lucide-react';
 
 const projects = [
@@ -49,11 +49,11 @@ export default function ProjectsSection() {
           {projects.map((proj, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.8 }}
-              className="p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)]/40 transition-all duration-500 flex flex-col justify-between items-stretch group hover:-translate-y-2 gold-shadow"
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col justify-between items-stretch group gold-shadow"
             >
               <div>
                 <div className="flex justify-between items-center mb-6">

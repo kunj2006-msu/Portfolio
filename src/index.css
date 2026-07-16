@@ -34,19 +34,19 @@
 }
 
 .programmer-theme {
-  --background: #0b0f19; /* Deep tech dark blue */
+  --background: #050505; /* Hacker pure black background */
   --foreground: #e2e8f0; /* Slate-200 */
-  --accent: #06b6d4; /* Electric Cyan */
-  --accent-foreground: #0b0f19;
-  --accent-glow: rgba(6, 182, 212, 0.6);
-  --accent-shadow: rgba(6, 182, 212, 0.3);
-  --border-accent: rgba(6, 182, 212, 0.3);
-  --card: #111827; /* Gray-900 */
+  --accent: #00ff41; /* Kali Linux Neon Green */
+  --accent-foreground: #000000;
+  --accent-glow: rgba(0, 255, 65, 0.6);
+  --accent-shadow: rgba(0, 255, 65, 0.3);
+  --border-accent: rgba(0, 255, 65, 0.25);
+  --card: #0a0d14; /* Extremely dark card bg */
   --card-foreground: #f8fafc; /* Slate-50 */
-  --muted: #1f2937; /* Gray-800 */
-  --muted-foreground: #94a3b8; /* Slate-400 */
-  --border: #1e293b; /* Gray-800 border */
-  --particle-glow: #22d3ee;
+  --muted: #111724; /* Muted tech gray */
+  --muted-foreground: #6b7c96; /* Tech gray text */
+  --border: #182333; /* Dark border */
+  --particle-glow: #00ff41;
 }
 
 @layer base {
@@ -120,4 +120,92 @@
 
 .animate-fade-in-menu {
   animation: fadeInMenu 0.2s ease-out forwards;
+}
+
+/* Terminal Cursor Blink Animation */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursorBlink 0.9s steps(2, start) infinite;
+}
+
+/* CRT Screen Scanline Overlay Effect */
+.crt-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-overlay::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0.85;
+}
+
+/* Cyber Glitch Logo Animation */
+.glitch-text:hover {
+  text-shadow: 
+    0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  animation: glitch 500ms infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 
+      0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 
+      0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: 
+      -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 
+      0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75),
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 
+      0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75),
+      0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: 
+      -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+/* Enforce neon green shadow glow on hover under programmer theme */
+.programmer-theme .gold-shadow:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 18px var(--accent-glow) !important;
 }

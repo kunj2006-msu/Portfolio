@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ArrowLeft, BookOpen } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import DevHero from './DevHero';
 import Education from './Education';
 import ProjectsSection from './ProjectsSection';
@@ -59,7 +59,7 @@ export default function ProgrammerProfile() {
               >
                 <ArrowLeft size={20} />
               </Link>
-              <span className="text-xl md:text-2xl font-bold font-sans tracking-tight text-[var(--foreground)]">
+              <span className="text-xl md:text-2xl font-bold font-sans tracking-tight text-[var(--foreground)] glitch-text cursor-pointer transition-all duration-300">
                 &lt;Dev.Portfolio /&gt;
               </span>
             </div>
