@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowLeft, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import DevHero from './DevHero';
@@ -8,6 +8,7 @@ import ProjectsSection from './ProjectsSection';
 import AchievementsAndCommunity from './AchievementsAndCommunity';
 import ContactSection from './ContactSection';
 import ParticleBackground from '../../components/ParticleBackground';
+import ProjectDetail from './ProjectDetail';
 
 const navLinks = [
   { name: 'Developer', href: '#developer' },
@@ -23,6 +24,9 @@ export default function ProgrammerProfile() {
   const [booting, setBooting] = useState(true);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/programmer' || location.pathname === '/programmer/';
+
 
   // Scroll progress bar
   const { scrollYProgress } = useScroll();
@@ -151,7 +155,7 @@ export default function ProgrammerProfile() {
               {navLinks.map((link) => (
                 <a
                   key={link.name}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/programmer${link.href}`}
                   className="text-sm font-medium text-[var(--foreground)]/80 hover:text-[var(--accent)] transition-all duration-300 relative group font-sans"
                   onMouseEnter={() => setHoveredLink(link.name)}
                   onMouseLeave={() => setHoveredLink(null)}
@@ -211,7 +215,7 @@ export default function ProgrammerProfile() {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={isHomePage ? link.href : `/programmer${link.href}`}
                 onClick={() => setIsOpen(false)}
                 className="text-2xl font-sans text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
               >
@@ -236,10 +240,20 @@ export default function ProgrammerProfile() {
 
       {/* Main Sections */}
       <main className="relative z-10 pt-20">
-        <DevHero />
-        <Education />
-        <ProjectsSection onModalToggle={setIsProjectModalOpen} />
-        <AchievementsAndCommunity onModalToggle={setIsProjectModalOpen} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <DevHero />
+                <Education />
+                <ProjectsSection onModalToggle={setIsProjectModalOpen} />
+                <AchievementsAndCommunity onModalToggle={setIsProjectModalOpen} />
+              </>
+            }
+          />
+          <Route path="project/:id" element={<ProjectDetail />} />
+        </Routes>
       </main>
 
       {/* Currently Exploring Section */}

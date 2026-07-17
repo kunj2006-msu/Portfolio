@@ -17,7 +17,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/poet/*" element={<PoetProfile />} />
-          <Route path="/programmer" element={<ProgrammerProfile />} />
+          <Route path="/programmer/*" element={<ProgrammerProfile />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

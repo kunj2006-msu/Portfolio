@@ -237,3 +237,10 @@
 .animate-boot-fill {
   animation: bootFill 1.8s ease-in-out forwards;
 }
+
+/* Hide navbar when a modal is active in Poet Profile */
+body.modal-active nav {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+}

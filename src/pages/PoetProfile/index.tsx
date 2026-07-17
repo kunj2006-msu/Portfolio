@@ -10,12 +10,13 @@ import MyCompositions from './MyCompositions';
 import FavoritePoets from './FavoritePoets';
 import PoemListView from './PoemListView';
 import FullPoemView from './FullPoemView';
+import WorkDetail from './WorkDetail';
 
 const navLinks = [
   { name: 'પરિચય', path: '#bio', isHash: true },
   { name: 'મારી રચનાઓ', path: '/poet/mari-rachnao', isHash: false },
   { name: 'મને ગમતી રચનાઓ', path: '/poet/gamti-rachnao', isHash: false },
-  { name: 'સિદ્ધિઓ', path: '#achievements', isHash: true },
+  { name: 'સિદ્ધિઓ', path: '/poet/siddhio', isHash: false },
   { name: 'સંપર્ક', path: '#contact', isHash: true },
 ];
 
@@ -208,17 +209,18 @@ export default function PoetProfile() {
             element={
               <>
                 <PoetHero />
-                <Achievements />
                 <Contact />
               </>
             }
           />
           <Route path="mari-rachnao" element={<MyCompositions />} />
+          <Route path="siddhio" element={<Achievements />} />
           <Route path="mari-rachnao/:category" element={<PoemListView type="my" />} />
           <Route path="mari-rachnao/:category/:poemId" element={<FullPoemView type="my" />} />
           <Route path="gamti-rachnao" element={<FavoritePoets />} />
           <Route path="gamti-rachnao/:poetId" element={<PoemListView type="fav" />} />
           <Route path="gamti-rachnao/:poetId/:poemId" element={<FullPoemView type="fav" />} />
+          <Route path="work/:id" element={<WorkDetail />} />
         </Routes>
       </main>
 
