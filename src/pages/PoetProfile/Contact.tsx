@@ -8,7 +8,8 @@ export default function Contact() {
     event.preventDefault();
     setStatus('submitting');
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "");
 
     try {
@@ -21,7 +22,7 @@ export default function Contact() {
 
       if (data.success) {
         setStatus('success');
-        event.currentTarget.reset();
+        form.reset();
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         console.error("Error", data);
