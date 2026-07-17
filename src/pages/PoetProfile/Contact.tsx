@@ -136,7 +136,7 @@ export default function Contact() {
                   name="message"
                   required
                   className="w-full bg-white/5 border border-[var(--accent)]/20 rounded-xl px-4 py-3 focus:outline-none focus:border-[var(--accent)] transition-colors text-white h-28 resize-none text-sm"
-                  placeholder="તમારો સંદેશ..."
+                  placeholder="તમારો સંદેશ....."
                 />
               </div>
 
