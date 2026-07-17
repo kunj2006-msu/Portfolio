@@ -163,10 +163,10 @@ export default function AchievementsAndCommunity({ onModalToggle }: Achievements
                     </div>
                     <div className="space-y-1.5 text-xs">
                       <p className="text-[var(--muted-foreground)]">
-                        <strong className="text-white font-bold">// Role:</strong> AI/ML Developer & Presenter
+                        <strong className="text-white font-bold">// Role:</strong> Management Team & Speaker
                       </p>
                       <p className="text-slate-300 leading-relaxed">
-                        Co-organized machine learning bootcamps; assisted in mentoring 50+ students on deep learning architectures, convolutional neural nets, and OpenCV integrations.
+                        Managing core club operations and actively sharing knowledge within the campus community. Recently delivered a hands-on seminar on leveraging Hugging Face with Google Colab, demonstrating how to deploy and interact with pre-trained AI models using advanced system prompts.
                       </p>
                     </div>
                   </div>
@@ -183,10 +183,10 @@ export default function AchievementsAndCommunity({ onModalToggle }: Achievements
                     </div>
                     <div className="space-y-1.5 text-xs">
                       <p className="text-[var(--muted-foreground)]">
-                        <strong className="text-white font-bold">// Role:</strong> Core Technical Lead
+                        <strong className="text-white font-bold">// Role:</strong> Web Development Team Member
                       </p>
                       <p className="text-slate-300 leading-relaxed">
-                        Spearheaded web development workshops focused on React.js and modern state-management paradigms. Maintained club repositories and designed landing pages for campus events.
+                        Recently inducted into the core web development team. Actively collaborating with peers to explore modern web technologies, bringing my full-stack and React experience to campus-driven development initiatives.
                       </p>
                     </div>
                   </div>
