@@ -122,7 +122,7 @@ export default function Education() {
                 <div className="relative mb-8">
                   <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#00FF41]/30 overflow-hidden bg-[#0a0d14] flex items-center justify-center group-hover:border-[#00FF41]/60 transition-all duration-500 shadow-[0_0_20px_rgba(0,255,65,0.08)]">
                     <img
-                      src="https://res.cloudinary.com/dssflxwaq/image/upload/v1784209320/c4273aeb-6400-4237-a40a-383f88498fcd.png"
+                      src="https://res.cloudinary.com/dssflxwaq/image/upload/v1784291901/8d96c49f-10fb-4317-8859-dad32a3e40dd.png"
                       alt="Profile"
                       className="w-full h-full object-cover"
                       onError={(e) => {
