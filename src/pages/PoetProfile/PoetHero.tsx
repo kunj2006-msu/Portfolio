@@ -9,25 +9,6 @@ export default function PoetHero() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full">
-        {/* ─── Top Section: The Quote ─── */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-12 lg:mb-16"
-        >
-          <p className="text-base sm:text-lg md:text-xl font-serif italic tracking-wide golden-glow mb-4">
-            શબ્દ અને સાધના
-          </p>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-serif text-[var(--foreground)] tracking-tight leading-tight">
-            તારે કાજે ગઝલ મનોરંજન,
-            ને મારે માટે તો પ્રાણવાયુ છે.
-          </h1>
-          <span className="mt-3 inline-block text-lg sm:text-xl font-serif text-gray-600 dark:text-gray-400 italic">
-            - ' મરીઝ '
-          </span>
-        </motion.div>
-
         {/* ─── Bottom Section: 2-Column Grid ─── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
 
@@ -104,7 +85,7 @@ export default function PoetHero() {
                 className="absolute w-28 h-28 sm:w-36 sm:h-36 md:w-[280px] md:h-[280px] rounded-full z-20 flex items-center justify-center bg-[#151310] border-2 border-[var(--accent)] shadow-[0_0_30px_rgba(212,175,55,0.3)] overflow-hidden"
               >
                 <img
-                  src={profilePhoto}
+                  src="https://res.cloudinary.com/dssflxwaq/image/upload/v1784264833/f1fb2ccf-a0ea-4c05-88d8-5299e8f19f4b.png"
                   alt="Poet Profile"
                   className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
                 />
@@ -141,11 +122,11 @@ export default function PoetHero() {
             <div className="w-16 h-[1px] bg-[var(--accent)]/30 mx-auto lg:mx-0" />
 
             <p className="text-lg sm:text-xl md:text-2xl text-[var(--muted-foreground)] font-light leading-relaxed lg:leading-[1.9] font-serif italic">
-              "Enthusiast of Gujarati and Hindi literature, specializing in Ghazals."
+              "Reading is how I inhale the world; writing is how I exhale my soul."
             </p>
 
             <p className="text-sm md:text-base text-[var(--muted-foreground)]/80 leading-relaxed lg:leading-[1.95]">
-              સાહિત્ય મારી સાધના છે અને કવિતા હૃદયના ભાવોને વાચા આપવાનું ઉત્તમ માધ્યમ છે. ખાસ કરીને ગઝલ વિધામાં ભાવોની ગહનતા અને છંદોના લય સાથે માનવીય સંવેદનાઓને રજૂ કરવાનો નમ્ર પ્રયાસ કરું છું.
+              વાંચન અને લેખન — આ બંને મારા માટે શ્વાસ અને ઉચ્છવાસ સમાન છે. હિન્દી અને ગુજરાતી સાહિત્યના દિગ્ગજોને વાંચીને હું શબ્દોની ગહનતા પામું છું, અને જ્યારે એ જ અનુભૂતિઓ હૃદયમાં છલકાઈ જાય, ત્યારે તે કાગળ પર ગઝલ બનીને શ્વાસ લે છે. એક સારો ગઝલકાર બનતા પહેલા, હું હંમેશા એક સારો ભાવક (વાચક) રહેવાનું પસંદ કરું છું.
             </p>
 
             <div className="w-16 h-[1px] bg-[var(--accent)]/30 mx-auto lg:mx-0" />
