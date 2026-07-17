@@ -42,9 +42,9 @@ export default function Contact() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-5xl font-bold font-serif mb-6 text-[var(--foreground)]">સંપર્ક કરો</h2>
-              <p className="text-lg text-[var(--muted-foreground)] font-light italic leading-relaxed font-serif">
+              {/* <p className="text-lg text-[var(--muted-foreground)] font-light italic leading-relaxed font-serif">
                 મુશાયરા, કાર્યક્રમ આમંત્રિતો અથવા સાહિત્યિક ચર્ચા માટે નિઃસંકોચ સંપર્ક કરો.
-              </p>
+              </p> */}
             </div>
 
             <div className="space-y-6">
