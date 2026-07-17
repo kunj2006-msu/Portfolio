@@ -1,32 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, User } from 'lucide-react';
+import { Terminal, User, Github, Linkedin, Mail } from 'lucide-react';
 import TiltCard from '../../components/TiltCard';
-
-const techTags = [
-  '[ React.js ]',
-  '[ Python ]',
-  '[ AI/ML ]',
-  '[ Next.js 16 ]',
-  '[ Spring Boot ]',
-  '[ Docker ]',
-  '[ Java ]',
-  '[ MongoDB ]',
-];
-
-const tagContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.07,
-    },
-  },
-};
-
-const tagVariants = {
-  hidden: { opacity: 0, scale: 0.6, y: 10 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
-};
 
 export default function Education() {
   return (
@@ -74,20 +49,49 @@ export default function Education() {
                     <span>&gt; WHOAMI</span>
                   </h3>
 
-                  <div className="space-y-4 font-mono text-sm leading-relaxed">
-                    <p className="text-cyan-400">
-                      I am a <span className="text-white font-semibold">3rd-year B.E. Computer Science</span> student at{' '}
-                      <span className="text-[#00FF41] font-semibold">MSU Baroda</span>.
+                  <div className="space-y-4 font-mono text-sm leading-relaxed text-[var(--muted-foreground)]">
+                    <p className="text-cyan-400 font-semibold text-base border-b border-[var(--border)]/20 pb-2 mb-3">
+                      Software Engineer | AI Enthusiast | Poet
                     </p>
-                    <p className="text-[var(--muted-foreground)]">
-                      I am passionate about <span className="text-cyan-400">Object-Oriented Programming</span>,
-                      building <span className="text-cyan-400">full-stack AI healthcare systems</span>,
-                      and solving real-world problems.
+                    <p>
+                      Currently navigating my <span className="text-white font-semibold">3rd year of B.E. CSE</span> at{' '}
+                      <span className="text-[#00FF41] font-semibold">MSU Baroda</span>. I specialize in building{' '}
+                      <span className="text-cyan-400 font-semibold">robust full-stack applications</span> and{' '}
+                      <span className="text-cyan-400 font-semibold">AI-driven healthcare platforms</span>. From optimizing database queries to deploying intelligent systems, I thrive on solving real-world architectural challenges.
                     </p>
-                    <p className="text-[var(--muted-foreground)]">
-                      When I'm not coding, I write <span className="text-[#00FF41]">Ghazals</span> and
-                      contribute to <span className="text-[#00FF41]">open-source communities</span>.
+                    <p>
+                      Offline, I balance my highly logical daily routine by contributing to{' '}
+                      <span className="text-[#00FF41] font-semibold">open-source communities</span> and writing{' '}
+                      <span className="text-[#00FF41] font-semibold">Gujarati & Hindi Ghazals</span>.
                     </p>
+                  </div>
+
+                  {/* Neofetch Output */}
+                  <div className="pt-5 mt-5 border-t border-[var(--border)]/20 space-y-3">
+                    <div className="text-[#00FF41] font-bold text-xs flex items-center gap-1.5">
+                      <span>kakakunj57@gmial.com:~$</span>
+                      <span className="text-white font-normal">neofetch</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-cyan-400 font-mono">
+                      <div className="space-y-1">
+                        <p className="text-[var(--accent)] font-bold uppercase">LANGUAGES</p>
+                        <p className="text-[var(--muted-foreground)] leading-relaxed">
+                          Java, Python, C,<br />JavaScript, HTML
+                        </p>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-[var(--accent)] font-bold uppercase">TECHNOLOGIES</p>
+                        <p className="text-[var(--muted-foreground)] leading-relaxed">
+                          React, Spring Boot,<br />MongoDB, PostgreSQL,<br />pgvector
+                        </p>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-[var(--accent)] font-bold uppercase">TOOLS & AI</p>
+                        <p className="text-[var(--muted-foreground)] leading-relaxed">
+                          Git, Docker/Containers,<br />Cursor, Antigravity,<br />TensorFlow, OpenCV
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -104,18 +108,19 @@ export default function Education() {
             </TiltCard>
           </motion.div>
 
-          {/* Right Column — Profile Image & Tech Tags Card */}
+          {/* Right Column — Profile Image & Name Card */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.25 }}
+            className="h-full flex flex-col justify-center"
           >
             <TiltCard className="h-full">
-              <div className="h-full p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col items-center justify-center gold-shadow group">
+              <div className="h-full min-h-[480px] p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_#00FF41] flex flex-col items-center justify-center gold-shadow group">
                 {/* Profile Image */}
                 <div className="relative mb-8">
-                  <div className="w-64 h-64 rounded-2xl border-2 border-[#00FF41]/30 overflow-hidden bg-[#0a0d14] flex items-center justify-center group-hover:border-[#00FF41]/60 transition-all duration-500 shadow-[0_0_20px_rgba(0,255,65,0.08)]">
+                  <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-2xl border-2 border-[#00FF41]/30 overflow-hidden bg-[#0a0d14] flex items-center justify-center group-hover:border-[#00FF41]/60 transition-all duration-500 shadow-[0_0_20px_rgba(0,255,65,0.08)]">
                     <img
                       src="https://res.cloudinary.com/dssflxwaq/image/upload/v1784209320/c4273aeb-6400-4237-a40a-383f88498fcd.png"
                       alt="Profile"
@@ -126,33 +131,44 @@ export default function Education() {
                         target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
                       }}
                     />
-                    {/* Fallback icon */}
-                    {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <User size={80} className="text-[#00FF41]/20" />
-                    </div> */}
                   </div>
                   {/* Glow ring */}
                   <div className="absolute -inset-1 rounded-2xl bg-[#00FF41]/5 -z-10 group-hover:bg-[#00FF41]/10 transition-all duration-500 blur-sm" />
                 </div>
 
-                {/* Tech Tags */}
-                <motion.div
-                  className="flex flex-wrap justify-center gap-2.5 max-w-sm"
-                  variants={tagContainerVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  {techTags.map((tag, i) => (
-                    <motion.span
-                      key={i}
-                      variants={tagVariants}
-                      className="text-xs font-mono font-bold tracking-wider text-[#00FF41] border border-[#00FF41]/20 bg-[#00FF41]/5 px-3 py-1.5 rounded-lg cursor-default hover:scale-110 hover:bg-[#00FF41]/10 hover:border-[#00FF41]/40 transition-all duration-200"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </motion.div>
+                {/* Developer Name */}
+                <h3 className="text-2xl font-bold font-mono tracking-wider text-white uppercase group-hover:text-[#00FF41] transition-colors duration-300 select-none mb-4">
+                  Kunj Kaka
+                </h3>
+
+                {/* Social Links */}
+                <div className="flex gap-4 items-center mt-2">
+                  <a
+                    href="https://github.com/kunj2006-msu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl border border-[#00FF41]/20 bg-[#00FF41]/5 text-[#00FF41] hover:bg-[#00FF41] hover:text-black hover:scale-110 hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-all duration-300"
+                    aria-label="GitHub"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/kunj-kaka-263997359/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl border border-[#00FF41]/20 bg-[#00FF41]/5 text-[#00FF41] hover:bg-[#00FF41] hover:text-black hover:scale-110 hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-all duration-300"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                  <a
+                    href="mailto:kakakunj57@gmial.com"
+                    className="p-2.5 rounded-xl border border-[#00FF41]/20 bg-[#00FF41]/5 text-[#00FF41] hover:bg-[#00FF41] hover:text-black hover:scale-110 hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-all duration-300"
+                    aria-label="Email"
+                  >
+                    <Mail size={20} />
+                  </a>
+                </div>
               </div>
             </TiltCard>
           </motion.div>

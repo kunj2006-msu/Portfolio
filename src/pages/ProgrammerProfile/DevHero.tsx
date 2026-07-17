@@ -5,10 +5,8 @@ import { TypeAnimation } from 'react-type-animation';
 import MatrixRain from '../../components/MatrixRain';
 
 export default function DevHero() {
-  const [showWhoamiOutput, setShowWhoamiOutput] = useState(false);
-  const [whoamiOutputFinished, setWhoamiOutputFinished] = useState(false);
-  const [showNeofetchOutput, setShowNeofetchOutput] = useState(false);
-  const [neofetchOutputFinished, setNeofetchOutputFinished] = useState(false);
+  const [showBootOutput, setShowBootOutput] = useState(false);
+  const [bootOutputFinished, setBootOutputFinished] = useState(false);
 
   return (
     <section id="developer" className="relative min-h-screen flex items-center justify-center overflow-hidden py-16">
@@ -39,97 +37,37 @@ export default function DevHero() {
           </div>
 
           {/* Terminal Body */}
-          <div className="p-6 font-mono text-sm space-y-4 text-left leading-relaxed min-h-[300px]">
+          <div className="p-6 font-mono text-sm space-y-4 text-left leading-relaxed min-h-[220px]">
             <div>
               <span className="text-[#00FF41]">kakakunj57@gmial.com:~$</span>{' '}
               <span className="text-white">
                 <TypeAnimation
                   sequence={[
                     500,
-                    'whoami',
-                    () => setShowWhoamiOutput(true)
+                    './boot_sequence',
+                    () => setShowBootOutput(true)
                   ]}
                   speed={50}
                   cursor={false}
                 />
-                {!showWhoamiOutput && <span className="animate-cursor-blink text-[#00FF41] ml-0.5">█</span>}
+                {!showBootOutput && <span className="animate-cursor-blink text-[#00FF41] ml-0.5">█</span>}
               </span>
             </div>
 
-            {showWhoamiOutput && (
+            {showBootOutput && (
               <div className="text-cyan-400 space-y-1">
                 <TypeAnimation
                   sequence={[
-                    `> 3rd-year B.E. Computer Science student at MSU Baroda.\n> Passionate about OOP, full-stack AI healthcare systems, and solving real-world problems.\n> Active member of the university's AI/ML Club and Open Source contributor.`,
-                    () => setWhoamiOutputFinished(true)
+                    `> initializing developer_profile... [OK]\n> current_mission: Building intelligent AI systems & scalable web apps.\n> status: Available for open-source contributions & collaborations.`,
+                    () => setBootOutputFinished(true)
                   ]}
                   speed={75}
                   cursor={false}
                   style={{ whiteSpace: 'pre-line', display: 'block' }}
                 />
-                {showWhoamiOutput && !whoamiOutputFinished && (
+                {showBootOutput && (
                   <span className="animate-cursor-blink text-[#00FF41] ml-0.5">█</span>
                 )}
-              </div>
-            )}
-
-            {whoamiOutputFinished && (
-              <div>
-                <span className="text-[#00FF41]">kakakunj57@gmial.com:~$</span>{' '}
-                <span className="text-white">
-                  <TypeAnimation
-                    sequence={[
-                      300,
-                      'neofetch',
-                      () => setShowNeofetchOutput(true)
-                    ]}
-                    speed={50}
-                    cursor={false}
-                  />
-                  {!showNeofetchOutput && <span className="animate-cursor-blink text-[#00FF41] ml-0.5">█</span>}
-                </span>
-              </div>
-            )}
-
-            {showNeofetchOutput && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-cyan-400 pt-1 border-t border-[var(--border)]/30">
-                <div className="space-y-1">
-                  <p className="text-[var(--accent)] font-bold uppercase">LANGUAGES</p>
-                  <TypeAnimation
-                    sequence={["Java, Python, C,\nJavaScript, HTML"]}
-                    speed={60}
-                    cursor={false}
-                    style={{ whiteSpace: 'pre-line', display: 'block' }}
-                  />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[var(--accent)] font-bold uppercase">TECHNOLOGIES</p>
-                  <TypeAnimation
-                    sequence={[
-                      "React, Spring Boot,\nMongoDB, PostgreSQL,\npgvector",
-                      () => setNeofetchOutputFinished(true)
-                    ]}
-                    speed={60}
-                    cursor={false}
-                    style={{ whiteSpace: 'pre-line', display: 'block' }}
-                  />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[var(--accent)] font-bold uppercase">TOOLS & AI</p>
-                  <TypeAnimation
-                    sequence={["Git, Docker/Containers,\nCursor, Windsurf,\nTensorFlow, OpenCV"]}
-                    speed={60}
-                    cursor={false}
-                    style={{ whiteSpace: 'pre-line', display: 'block' }}
-                  />
-                </div>
-              </div>
-            )}
-
-            {neofetchOutputFinished && (
-              <div className="flex items-center gap-1 pt-2 text-[#00FF41]">
-                <span>visitor@portfolio:~$</span>
-                <span className="animate-cursor-blink text-[#00FF41]">█</span>
               </div>
             )}
           </div>
