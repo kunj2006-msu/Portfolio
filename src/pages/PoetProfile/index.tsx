@@ -88,7 +88,7 @@ export default function PoetProfile() {
                 <ArrowLeft size={20} />
               </Link>
               <span className="text-xl md:text-2xl font-bold font-serif tracking-tight text-[var(--foreground)]">
-                કવિ પોર્ટફોલિયો
+                કાવ્ય-કુંજ
               </span>
             </div>
 
