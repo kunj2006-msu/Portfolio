@@ -1131,9 +1131,34 @@ export const publishedWorks: Work[] = [
 ઉપરની ટોચથી આ ખીણ સુધી ઢાળ સીધો છે ,
 ઘડીમાં દેવથી દાનવ બનાવે માનવીનું મન .`,
     images: [
-      "https://res.cloudinary.com/dssflxwaq/image/upload/v1784285120/61e0fe68-267a-4e1a-ba8a-7eede2d15055.png",
+      "https://res.cloudinary.com/dssflxwaq/image/upload/v1784288135/6c1456fc-8e59-4e97-a8ae-6b58c79cf89e.png",
+      "https://res.cloudinary.com/dssflxwaq/image/upload/v1784285120/61e0fe68-267a-4e1a-ba8a-7eede2d15055.png"
 
     ]
+  },
+  {
+    id: "babel",
+    tag: "[પ્રકાશિત]",
+    title: "BABEL – The Newzine of the Department of Linguistics / The Maharaja Sayajirao University of Baroda",
+    excerpt: "દશા દિલની જરા બદલાય છે જ્યારે મળે છે તું",
+    fullText: `દશા દિલની જરા બદલાય છે જ્યારે મળે છે તું,
+ગઝલ પણ એક નવી કેવાય છે જ્યારે મળે છે તું.
+
+લીલા-આસીમ ર.પા.-સોનલ કલાપી-શોભના જેવી
+બધી વાતો ફરી મંડાય છે જ્યારે મળે છે તું
+
+સમય તો બે મિલન વચ્ચે બહુ ધીમો વહે છે પણ,
+સમય આ ખૂબ ઝડપી જાય છે જ્યારે મળે છે તું.
+
+બધાનો મત હતો કે નાસમજ છું પ્રેમની વાતે
+છતાં પણ જો બધું સમજાયછે જ્યારે મળે છે તું
+
+કિરણ જો શ્વેત, પ્રિઝમને મળે તો સાત રંગો થાય
+અસર મારા ઉપર એ થાય છે જ્યારે મળે છે તું
+
+કઠણમાંથી તરલમાંને તરલમાંથી પરમ જેવા
+પ્રણયમાં જાત પીગળી જાય છે જયારે મળે છે તું`,
+    images: ["https://res.cloudinary.com/dssflxwaq/image/upload/v1784288961/4351ee61-f411-4ac7-a630-7fcac5d546ec.png"]
   },
   {
     id: "mariz-page-aaswad",
@@ -1204,7 +1229,25 @@ Hું નથી જાણતો કેમ પણ આ શેર વાંચત
 
 ✍️ કુંજ સંજયકુમાર કાકા`,
     images: [
-      "/poet/magazine-placeholder.png"
+      "https://res.cloudinary.com/dssflxwaq/image/upload/v1784287762/e97a6e88-119e-447b-9c2f-8cd7d814d29a.png"
     ]
+  },
+  {
+    id: "mid-day",
+    tag: "[પ્રકાશિત]",
+    title: "Mid-day Gujrati from Mumbai",
+    excerpt: "તપતી ધરાને આજ તો ટાઢક વળી વરસાદમાં",
+    fullText: `તપતી ધરાને આજ તો ટાઢક વળી વરસાદમાં,
+લાલાશ જો ગુલમ્હોરની ઝાંખી પડી વરસાદમાં.
+
+પલળી અને બેસી ગયા છે  પંખીઓ સૌ ઝાડ પર,
+આકાશમાં ઊડે છે કાળી વાદળી વરસાદમાં.
+
+લાગે પહાડો પર હશે દરિયાનું લેણું એટલે,
+આપી છે કન્યાદાનમાં એણે નદી વરસાદમાં.
+
+વરસાદની બુંદો સનમને એવી તે શણગારતી,
+જોવાને એને ઇન્દ્ર કરતા વીજળી વરસાદમાં.`,
+    images: ["https://res.cloudinary.com/dssflxwaq/image/upload/v1784289585/f119ef4c-dd66-4ca6-bcd9-391026ff4cdd.jpg"]
   }
 ];

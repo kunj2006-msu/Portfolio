@@ -57,6 +57,20 @@ export default function ProgrammerProfile() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Hash scroll listener
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [location]);
+
   return (
     <div className="programmer-theme min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--accent)] selection:text-[var(--accent-foreground)] relative">
       {/* Boot Sequence Overlay */}
@@ -249,39 +263,39 @@ export default function ProgrammerProfile() {
                 <Education />
                 <ProjectsSection onModalToggle={setIsProjectModalOpen} />
                 <AchievementsAndCommunity onModalToggle={setIsProjectModalOpen} />
+
+                {/* Currently Exploring Section */}
+                <motion.section
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="py-12 border-t border-[var(--accent)]/10 bg-[var(--muted)]/5"
+                >
+                  <div className="max-w-5xl mx-auto px-4 text-center space-y-3">
+                    <h4 className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] font-bold font-sans">
+                      Currently Exploring
+                    </h4>
+                    <p className="text-sm md:text-base text-[var(--muted-foreground)]/90 max-w-2xl mx-auto font-mono leading-relaxed">
+                      Advanced Data Structures & Algorithms, building scalable full-stack utilities, and contributing to Open Source.
+                    </p>
+                  </div>
+                </motion.section>
+
+                <ContactSection />
+
+                {/* Footer */}
+                <footer className="py-8 border-t border-[var(--accent)]/10 text-center text-sm font-sans text-[var(--muted-foreground)]">
+                  <div className="max-w-7xl mx-auto px-4">
+                    <p>© {new Date().getFullYear()} Programmer Portfolio. All rights reserved.</p>
+                  </div>
+                </footer>
               </>
             }
           />
           <Route path="project/:id" element={<ProjectDetail />} />
         </Routes>
       </main>
-
-      {/* Currently Exploring Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="py-12 border-t border-[var(--accent)]/10 bg-[var(--muted)]/5"
-      >
-        <div className="max-w-5xl mx-auto px-4 text-center space-y-3">
-          <h4 className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] font-bold font-sans">
-            Currently Exploring
-          </h4>
-          <p className="text-sm md:text-base text-[var(--muted-foreground)]/90 max-w-2xl mx-auto font-mono leading-relaxed">
-            Advanced Data Structures & Algorithms, building scalable full-stack utilities, and contributing to Open Source.
-          </p>
-        </div>
-      </motion.section>
-
-      <ContactSection />
-
-      {/* Footer */}
-      <footer className="py-8 border-t border-[var(--accent)]/10 text-center text-sm font-sans text-[var(--muted-foreground)]">
-        <div className="max-w-7xl mx-auto px-4">
-          <p>© {new Date().getFullYear()} Programmer Portfolio. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }
