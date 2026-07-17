@@ -5,12 +5,16 @@ import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import DevHero from './DevHero';
 import Education from './Education';
 import ProjectsSection from './ProjectsSection';
+import AchievementsAndCommunity from './AchievementsAndCommunity';
+import ContactSection from './ContactSection';
 import ParticleBackground from '../../components/ParticleBackground';
 
 const navLinks = [
   { name: 'Developer', href: '#developer' },
   { name: 'About', href: '#education' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Certifications', href: '#achievements' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 export default function ProgrammerProfile() {
@@ -18,6 +22,7 @@ export default function ProgrammerProfile() {
   const [scrolled, setScrolled] = useState(false);
   const [booting, setBooting] = useState(true);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
   // Scroll progress bar
   const { scrollYProgress } = useScroll();
@@ -123,7 +128,7 @@ export default function ProgrammerProfile() {
           scrolled || isOpen
             ? 'md:bg-[#0b0f19]/90 md:backdrop-blur-lg md:border-b md:border-[var(--accent)]/20 md:py-3 md:shadow-2xl'
             : ''
-        }`}
+        } ${isProjectModalOpen ? 'opacity-0 pointer-events-none -translate-y-full' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
@@ -233,7 +238,8 @@ export default function ProgrammerProfile() {
       <main className="relative z-10 pt-20">
         <DevHero />
         <Education />
-        <ProjectsSection />
+        <ProjectsSection onModalToggle={setIsProjectModalOpen} />
+        <AchievementsAndCommunity onModalToggle={setIsProjectModalOpen} />
       </main>
 
       {/* Currently Exploring Section */}
@@ -253,6 +259,8 @@ export default function ProgrammerProfile() {
           </p>
         </div>
       </motion.section>
+
+      <ContactSection />
 
       {/* Footer */}
       <footer className="py-8 border-t border-[var(--accent)]/10 text-center text-sm font-sans text-[var(--muted-foreground)]">
