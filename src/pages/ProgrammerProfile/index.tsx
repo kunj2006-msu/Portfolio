@@ -164,12 +164,11 @@ export default function ProgrammerProfile() {
               </span>
             </div>
 
-            {/* Middle: Links with terminal cursor hover */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={isHomePage ? link.href : `/programmer${link.href}`}
+                  to={isHomePage ? link.href : `/programmer${link.href}`}
                   className="text-sm font-medium text-[var(--foreground)]/80 hover:text-[var(--accent)] transition-all duration-300 relative group font-sans"
                   onMouseEnter={() => setHoveredLink(link.name)}
                   onMouseLeave={() => setHoveredLink(null)}
@@ -184,7 +183,7 @@ export default function ProgrammerProfile() {
                     animate={{ width: hoveredLink === link.name ? '100%' : 0 }}
                     transition={{ duration: 0.3 }}
                   />
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -227,14 +226,14 @@ export default function ProgrammerProfile() {
         >
           <div className="flex flex-col items-center justify-start py-12 px-6 space-y-8 min-h-full">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={isHomePage ? link.href : `/programmer${link.href}`}
+                to={isHomePage ? link.href : `/programmer${link.href}`}
                 onClick={() => setIsOpen(false)}
                 className="text-2xl font-sans text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
 
             {/* Switch to Poet Button (Mobile Menu) */}

@@ -93,32 +93,21 @@ export default function PoetProfile() {
               </span>
             </div>
 
-            {/* Middle: Anchor links (Desktop) */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => {
-                if (link.isHash) {
-                  return (
-                    <a
-                      key={link.name}
-                      href={isHomePage ? link.path : `/poet${link.path}`}
-                      className="text-sm font-medium text-[var(--foreground)]/80 hover:text-[var(--accent)] transition-all duration-300 relative group font-serif"
-                    >
-                      {link.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
-                    </a>
-                  );
-                } else {
-                  return (
-                    <Link
-                      key={link.name}
-                      to={link.path}
-                      className="text-sm font-medium text-[var(--foreground)]/80 hover:text-[var(--accent)] transition-all duration-300 relative group font-serif"
-                    >
-                      {link.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
-                    </Link>
-                  );
-                }
+                const toTarget = link.isHash
+                  ? (isHomePage ? link.path : `/poet${link.path}`)
+                  : link.path;
+                return (
+                  <Link
+                    key={link.name}
+                    to={toTarget}
+                    className="text-sm font-medium text-[var(--foreground)]/80 hover:text-[var(--accent)] transition-all duration-300 relative group font-serif"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                );
               })}
             </div>
 
@@ -161,29 +150,19 @@ export default function PoetProfile() {
         >
           <div className="flex flex-col items-center justify-start py-12 px-6 space-y-8 min-h-full">
             {navLinks.map((link) => {
-              if (link.isHash) {
-                return (
-                  <a
-                    key={link.name}
-                    href={isHomePage ? link.path : `/poet${link.path}`}
-                    onClick={() => setIsOpen(false)}
-                    className="text-2xl font-serif text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                );
-              } else {
-                return (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className="text-2xl font-serif text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                );
-              }
+              const toTarget = link.isHash
+                ? (isHomePage ? link.path : `/poet${link.path}`)
+                : link.path;
+              return (
+                <Link
+                  key={link.name}
+                  to={toTarget}
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-serif text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              );
             })}
 
             {/* Switch to Programmer Button (Mobile Menu) */}
